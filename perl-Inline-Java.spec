@@ -1,9 +1,10 @@
 #
 # Conditional build:
 # _without_tests - do not perform "make test"
+#
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	Inline
-%define		pname	Java
+%define		pnam	Java
 Summary:	Inline::Java Perl module
 Summary(cs):	Modul Inline::Java pro Perl
 Summary(da):	Perlmodul Inline::Java
@@ -22,11 +23,11 @@ Summary(sv):	Inline::Java Perlmodul
 Summary(uk):	íÏÄÕÌØ ÄÌÑ Perl Inline::Java
 Summary(zh_CN):	Inline::Java Perl Ä£¿é
 Name:		perl-Inline-Java
-Version:	0.32
-Release:	2
+Version:	0.33
+Release:	1
 License:	Artistic
 Group:		Development/Languages/Perl
-Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pname}-%{version}.tar.gz
+Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 BuildRequires:	perl >= 5.6
 BuildRequires:	perl-Inline >= 0.43
 BuildRequires:	rpm-perlprov >= 3.0.3-16
@@ -42,7 +43,7 @@ Inline::Java - Write Perl classes in Java.
 Modu³ Inline::Java - pozwalaj±cy na pisanie klas Perla w Javie.
 
 %prep
-%setup -q -n %{pdir}-%{pname}-%{version}
+%setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
 perl Makefile.PL </dev/null
