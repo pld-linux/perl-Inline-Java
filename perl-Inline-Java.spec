@@ -3,8 +3,8 @@
 %bcond_without	tests	# do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
-%define	pdir	Inline
-%define	pnam	Java
+%define		pdir	Inline
+%define		pnam	Java
 Summary:	Inline::Java - write Perl classes in Java
 Summary(pl):	Inline::Java - pisanie klas Perla w Javie
 Name:		perl-Inline-Java
