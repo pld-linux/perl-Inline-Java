@@ -5,8 +5,8 @@
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	Inline
 %define		pnam	Java
-Summary:	Inline::Java module - write Perl classes in Java
-Summary(pl):	Modu³ Inline::Java - pisanie klas Perla w Javie
+Summary:	Inline::Java - write Perl classes in Java
+Summary(pl):	Inline::Java - pisanie klas Perla w Javie
 Name:		perl-Inline-Java
 Version:	0.43
 Release:	1
