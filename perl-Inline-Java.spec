@@ -1,39 +1,26 @@
 #
 # Conditional build:
-# _without_tests - do not perform "make test"
+%bcond_without	tests	# do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	Inline
 %define		pnam	Java
-Summary:	Inline::Java Perl module
-Summary(cs):	Modul Inline::Java pro Perl
-Summary(da):	Perlmodul Inline::Java
-Summary(de):	Inline::Java Perl Modul
-Summary(es):	Módulo de Perl Inline::Java
-Summary(fr):	Module Perl Inline::Java
-Summary(it):	Modulo di Perl Inline::Java
-Summary(ja):	Inline::Java Perl ¥â¥¸¥å¡¼¥ë
-Summary(ko):	Inline::Java ÆÞ ¸ðÁÙ
-Summary(no):	Perlmodul Inline::Java
-Summary(pl):	Modu³ Perla Inline::Java
-Summary(pt):	Módulo de Perl Inline::Java
-Summary(pt_BR):	Módulo Perl Inline::Java
-Summary(ru):	íÏÄÕÌØ ÄÌÑ Perl Inline::Java
-Summary(sv):	Inline::Java Perlmodul
-Summary(uk):	íÏÄÕÌØ ÄÌÑ Perl Inline::Java
-Summary(zh_CN):	Inline::Java Perl Ä£¿é
+Summary:	Inline::Java module - write Perl classes in Java
+Summary(pl):	Modu³ Inline::Java - pisanie klas Perla w Javie
 Name:		perl-Inline-Java
-Version:	0.33
-Release:	2
+Version:	0.43
+Release:	1
 License:	Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	4c7da1744ffa5a56d0f8dfa586791899
-BuildRequires:	perl-devel >= 5.6
+# Source0-md5:	f671df7dd7480b4acc924f298193817d
+BuildRequires:	jdk
+%if %{with tests}
 BuildRequires:	perl-Inline >= 0.43
+BuildRequires:	perl(Test) >= 1.13
+%endif
+BuildRequires:	perl-devel >= 5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
-%{!?_without_tests:BuildRequires:	jdk}
-BuildArch:	noarch
 Requires:	jdk
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -47,15 +34,21 @@ Modu³ Inline::Java - pozwalaj±cy na pisanie klas Perla w Javie.
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
-%{__perl} Makefile.PL </dev/null \
-	INSTALLDIRS=vendor
+%{__perl} Makefile.PL \
+	INSTALLDIRS=vendor \
+	J2SDK=/usr/lib/java \
+	</dev/null
+
+%{__make} java
 %{__make}
-%{!?_without_tests:%{__make} test}
+
+%{?with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
+	INSTALLDIRS=vendor \
 	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
@@ -64,6 +57,10 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc CHANGES README* TODO
-%{perl_vendorlib}/Inline/Java.pm
-%{perl_vendorlib}/Inline/Java
+%{perl_vendorarch}/Inline/Java.pm
+%{perl_vendorarch}/Inline/Java
+%dir %{perl_vendorarch}/auto/Inline/Java
+%dir %{perl_vendorarch}/auto/Inline/Java/JNI
+%{perl_vendorarch}/auto/Inline/Java/JNI/JNI.bs
+%attr(755,root,root) %{perl_vendorarch}/auto/Inline/Java/JNI/JNI.so
 %{_mandir}/man3/*
