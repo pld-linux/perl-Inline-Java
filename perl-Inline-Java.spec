@@ -36,7 +36,7 @@ Modu³ Inline::Java - pozwalaj±cy na pisanie klas Perla w Javie.
 %build
 %{__perl} Makefile.PL \
 	INSTALLDIRS=vendor \
-	J2SDK=/usr/lib/java \
+	J2SDK=%{_libdir}/java \
 	</dev/null
 
 %{__make} java
