@@ -46,7 +46,7 @@ Modu³ Inline::Java - pozwalaj±cy na pisanie klas Perla w Javie.
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
-perl Makefile.PL </dev/null
+%{__perl} Makefile.PL </dev/null
 %{__make}
 %{!?_without_tests:%{__make} test}
 
