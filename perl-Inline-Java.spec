@@ -1,8 +1,26 @@
+#
+# Conditional build:
+# _without_tests - do not perform "make test"
 %include	/usr/lib/rpm/macros.perl
-%define	pdir	Inline
-%define	pname	Java
-Summary:	Inline::Java perl module
-Summary(pl):	Modu³ perla Inline::Java
+%define		pdir	Inline
+%define		pname	Java
+Summary:	Inline::Java Perl module
+Summary(cs):	Modul Inline::Java pro Perl
+Summary(da):	Perlmodul Inline::Java
+Summary(de):	Inline::Java Perl Modul
+Summary(es):	Módulo de Perl Inline::Java
+Summary(fr):	Module Perl Inline::Java
+Summary(it):	Modulo di Perl Inline::Java
+Summary(ja):	Inline::Java Perl ¥â¥¸¥å¡¼¥ë
+Summary(ko):	Inline::Java ÆŞ ¸ğÁÙ
+Summary(no):	Perlmodul Inline::Java
+Summary(pl):	Modu³ Perla Inline::Java
+Summary(pt):	Módulo de Perl Inline::Java
+Summary(pt_BR):	Módulo Perl Inline::Java
+Summary(ru):	íÏÄÕÌØ ÄÌÑ Perl Inline::Java
+Summary(sv):	Inline::Java Perlmodul
+Summary(uk):	íÏÄÕÌØ ÄÌÑ Perl Inline::Java
+Summary(zh_CN):	Inline::Java Perl Ä£¿é
 Name:		perl-Inline-Java
 Version:	0.32
 Release:	1
@@ -28,6 +46,7 @@ Modu³ Inline::Java - pozwalaj±cy na pisanie klas Perla w Javie.
 %build
 perl Makefile.PL </dev/null
 %{__make}
+%{!?_without_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
