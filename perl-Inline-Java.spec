@@ -23,13 +23,14 @@ Summary(uk):	Модуль для Perl Inline::Java
 Summary(zh_CN):	Inline::Java Perl дё©И
 Name:		perl-Inline-Java
 Version:	0.32
-Release:	1
+Release:	2
 License:	Artistic
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pname}-%{version}.tar.gz
 BuildRequires:	perl >= 5.6
 BuildRequires:	perl-Inline >= 0.43
 BuildRequires:	rpm-perlprov >= 3.0.3-16
+%{!?_without_tests:BuildRequires:	jdk}
 BuildArch:	noarch
 Requires:	jdk
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
