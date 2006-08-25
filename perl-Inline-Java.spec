@@ -15,6 +15,7 @@ Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	9a74e53d5d56aa1bd9a9556fa2e2400e
 BuildRequires:	jdk
+BuildRequires:	jpackage-utils
 %if %{with tests}
 BuildRequires:	perl-Inline >= 0.43
 BuildRequires:	perl(Test) >= 1.13
