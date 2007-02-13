@@ -6,7 +6,7 @@
 %define		pdir	Inline
 %define		pnam	Java
 Summary:	Inline::Java - write Perl classes in Java
-Summary(pl.UTF-8):   Inline::Java - pisanie klas Perla w Javie
+Summary(pl.UTF-8):	Inline::Java - pisanie klas Perla w Javie
 Name:		perl-Inline-Java
 Version:	0.49
 Release:	2
