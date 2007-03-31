@@ -12,8 +12,9 @@ Version:	0.49
 Release:	3
 License:	Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Inline/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	9a74e53d5d56aa1bd9a9556fa2e2400e
+URL:		http://search.cpan.org/dist/Inline-Java/
 BuildRequires:	jdk
 BuildRequires:	jpackage-utils
 %if %{with tests}
