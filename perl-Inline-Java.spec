@@ -8,12 +8,12 @@
 Summary:	Inline::Java - write Perl classes in Java
 Summary(pl.UTF-8):	Inline::Java - pisanie klas Perla w Javie
 Name:		perl-Inline-Java
-Version:	0.49
-Release:	3
+Version:	0.53
+Release:	1
 License:	Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Inline/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	9a74e53d5d56aa1bd9a9556fa2e2400e
+# Source0-md5:	23f96c2ac4915302c3647c0abc92916f
 URL:		http://search.cpan.org/dist/Inline-Java/
 BuildRequires:	jdk
 BuildRequires:	jpackage-utils
