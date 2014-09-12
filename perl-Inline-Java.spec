@@ -63,6 +63,5 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorarch}/Inline/Java
 %dir %{perl_vendorarch}/auto/Inline/Java
 %dir %{perl_vendorarch}/auto/Inline/Java/JNI
-%{perl_vendorarch}/auto/Inline/Java/JNI/JNI.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/Inline/Java/JNI/JNI.so
 %{_mandir}/man3/*
